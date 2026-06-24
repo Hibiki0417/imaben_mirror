@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Shop
 
 
 def shop_list(request):
-    return HttpResponse("いま弁 店舗一覧ページ")
+    shops = Shop.objects.all()
+    return render(request, "shops/shop_list.html", {"shops": shops})
