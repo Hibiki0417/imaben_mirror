@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>店舗詳細</title>
+    </head>
+
+    <body>
+        <h1>{{shop.name}}</h1>
+        <p>{{shop.get_opening_status_display}}</p>
+        <p>{{shop.get_stock_status_display}}</p>
+        <p>{{shop.address}}</p>
+        <p>{{shop.description}}</p>
+        <p>{{shop.today_menu}}</p>
+        <p>{{shop.special_notice}}</p>
+        <p>{{shop.updated_at}}</p>
+        
+        <a href="{% url 'shops:shop_list' %}">店舗一覧へ</a>
+
+        
+    </body>
+</html>
