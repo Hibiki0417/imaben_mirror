@@ -3,9 +3,18 @@
 {% for shop in shops %}
   <div>
     <h2>{{ shop.name }}</h2>
-    <p>営業状況：{{ shop.get_opening_status_display }}</p>
-    <p>在庫状況：{{ shop.get_stock_status_display }}</p>
-    <p>住所：{{ shop.address }}</p>
+    <p>【営業状況】：{{ shop.get_opening_status_display }}</p>
+    <p>【在庫状況】：{{ shop.get_stock_status_display }}</p>
+    <p>【住所】：{{ shop.address }}</p>
+
+  {% if shop.special_notice_enabled  %}
+
+        <p>【今だけ情報】：{{shop.special_notice}}</p>
+
+  {% endif %}
+    <p>【最終更新日時】：{{shop.updated_at}}</p>
+
+    <a href="{% url 'shops:shop_detail' shop.pk %}">店舗詳細へ</a>
   </div>
 {% empty %}
   <p>登録されている店舗はありません。</p>

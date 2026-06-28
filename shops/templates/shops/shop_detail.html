@@ -6,13 +6,19 @@
 
     <body>
         <h1>{{shop.name}}</h1>
-        <p>{{shop.get_opening_status_display}}</p>
-        <p>{{shop.get_stock_status_display}}</p>
-        <p>{{shop.address}}</p>
-        <p>{{shop.description}}</p>
-        <p>{{shop.today_menu}}</p>
-        <p>{{shop.special_notice}}</p>
-        <p>{{shop.updated_at}}</p>
+        <p>【営業状況】：{{shop.get_opening_status_display}}</p>
+        <p>【在庫状況】：{{shop.get_stock_status_display}}</p>
+        <p>【住所】：{{shop.address}}</p>
+        <p>【店舗説明】：{{shop.description}}</p>
+        <p>【本日のメニュー】：{{shop.today_menu}}</p>
+
+      {% if shop.special_notice_enabled %}
+
+        <p>【今だけ情報】：{{shop.special_notice}}</p>
+
+      {% endif %}
+
+        <p>【最終更新日時】：{{shop.updated_at}}</p>
         
         <a href="{% url 'shops:shop_list' %}">店舗一覧へ</a>
 
