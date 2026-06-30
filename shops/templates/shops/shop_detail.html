@@ -1,27 +1,33 @@
+{% load static %} 
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>店舗詳細</title>
-    </head>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>いま弁：店舗詳細</title>
+    <link href="{% static 'shops/css/shop.css' %}" rel="stylesheet">
+  </head>
 
     <body>
-        <h1>{{shop.name}}</h1>
-        <p>【営業状況】：{{shop.get_opening_status_display}}</p>
-        <p>【在庫状況】：{{shop.get_stock_status_display}}</p>
-        <p>【住所】：{{shop.address}}</p>
-        <p>【店舗説明】：{{shop.description}}</p>
-        <p>【本日のメニュー】：{{shop.today_menu}}</p>
+      <div class="shop-card">
+          <h1>{{shop.name}}</h1>
+          <p>【営業状況】：{{shop.get_opening_status_display}}</p>
+          <p>【在庫状況】：{{shop.get_stock_status_display}}</p>
+          <p>【住所】：{{shop.address}}</p>
+          <p>【店舗説明】：{{shop.description}}</p>
+          <p>【本日のメニュー】：{{shop.today_menu}}</p>
 
-      {% if shop.special_notice_enabled %}
+        {% if shop.special_notice_enabled %}
 
-        <p>【今だけ情報】：{{shop.special_notice}}</p>
+          <p class="special-notice">【今だけ情報】：{{shop.special_notice}}</p>
 
-      {% endif %}
+        {% endif %}
 
-        <p>【最終更新日時】：{{shop.updated_at}}</p>
-        
-        <a href="{% url 'shops:shop_list' %}">店舗一覧へ</a>
-
+          <p>【最終更新日時】：{{shop.updated_at}}</p>
+          
+          <a href="{% url 'shops:shop_list' %}" class="btn">店舗一覧へ</a>
+      </div>
         
     </body>
 </html>

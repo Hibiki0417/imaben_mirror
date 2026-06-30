@@ -1,0 +1,36 @@
+.shop-card {
+  width: 100%;
+  max-width: 320px; /* カードの最大幅 */
+  background-color: #ffffff;
+  border-radius: 12px; /* 角を丸くする */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 柔らかい影をつける */
+  overflow: hidden; /* はみ出た画像をカード内に収める */
+  transition: transform 0.3s ease; /* ホバー時のアニメーション */
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+  cursor: pointer;
+}
+
+.special-notice {
+  background-color: #fff3cd;
+  border-left: 5px solid #f0ad4e;
+  padding: 12px 14px;
+  margin: 16px 0;
+  border-radius: 8px;
+  font-weight: bold;
+}
