@@ -14,11 +14,11 @@
           <h1>{{shop.name}}</h1>
           <p>【営業状況】：{{shop.get_opening_status_display}}</p>
           <p>【在庫状況】：{{shop.get_stock_status_display}}</p>
-          <p>【住所】：{{shop.address}}</p>
-          <p>【店舗説明】：{{shop.description}}</p>
-          <p>【本日のメニュー】：{{shop.today_menu}}</p>
+          <p>【住所】：{{shop.address|default:"住所は未登録です。"}}</p>
+          <p>【店舗説明】：{{shop.description|default:"店舗説明は未登録です。"}}</p>
+          <p>【本日のメニュー】：{{shop.today_menu|default:"本日のメニューは未登録です。"}}</p>
 
-        {% if shop.special_notice_enabled %}
+        {% if shop.special_notice_enabled and shop.special_notice %}
 
           <p class="special-notice">【今だけ情報】：{{shop.special_notice}}</p>
 
