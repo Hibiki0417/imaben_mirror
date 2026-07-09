@@ -107,6 +107,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-LOGIN_REDIRECT_URL = 'shops:shop_list'
+LOGIN_REDIRECT_URL = 'manager:dashboard'
 
-LOGIN_URL = 'manager:manager_login'
+LOGIN_URL = 'manager:manager_login' 
